@@ -6,5 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'exlibris-angular-task';
+  isLoading: boolean = true;
+  numOfItems: number = 0;
+
+  onSuccess(len: number) {
+    console.log("PARENT onSuccess()");
+    this.isLoading = false;
+    this.numOfItems += len;
+  }
 }
